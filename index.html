@@ -18,31 +18,39 @@
   </head>
   <body>
     <main>
-      <nav>
-        <div class="logo">
-          <img src="./images/logo.svg" alt="" />
+      <div class="container">
+        <nav>
+          <div class="logo">
+            <img src="./images/logo.svg" alt="" />
+          </div>
+        </nav>
+        <div class="hero-image">
+          <picture>
+            <source
+              class="bg-img"
+              media="(min-width: 65rem)"
+              srcset="./images/hero-desktop.jpg"
+            />
+            <img
+              src="./images/hero-mobile.jpg"
+              alt="a lady standing in front of a plant"
+            />
+          </picture>
         </div>
-      </nav>
-      <div class="hero-image">
-        <img
-          src="./images/hero-mobile.jpg"
-          alt="a lady standing in front of a plant"
-        />
-      </div>
-
-      <div class="main__content">
-        <h1><span>We're</span> coming soon</h1>
-        <p>
-          Hello fellow shoppers! We're currently building our new fashion store.
-          Add your email below to stay up-to-date with announcements and our
-          launch deals.
-        </p>
-        <form action="#">
-          <input class="email-box" type="email" placeholder="Email Address" />
-          <button class="email-submit" type="submit">
-            <img src="./images/icon-arrow.svg" alt="" />
-          </button>
-        </form>
+        <div class="main__content">
+          <h1><span>We're</span> coming soon</h1>
+          <p>
+            Hello fellow shoppers! We're currently building our new fashion
+            store. Add your email below to stay up-to-date with announcements
+            and our launch deals.
+          </p>
+          <form action="#">
+            <input class="email-box" type="email" placeholder="Email Address" />
+            <button class="email-submit" type="submit">
+              <img src="./images/icon-arrow.svg" alt="" />
+            </button>
+          </form>
+        </div>
       </div>
     </main>
 

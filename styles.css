@@ -103,6 +103,8 @@ textarea:not([rows]) {
 }
 
 body {
+  background: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+
   margin: 0;
   font-family: "Josefin Sans", sans-serif;
   display: grid;
@@ -138,7 +140,6 @@ h1 span {
 }
 
 .main__content {
-  background: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
   padding: 1rem;
 }
 
@@ -186,4 +187,34 @@ form {
   grid-template-columns: 1fr 1fr;
   place-items: center;
 */
+}
+
+@media (min-width: 65rem) {
+  nav {
+    float: left;
+  }
+  .container {
+  }
+
+  .hero-image {
+    padding-left: 5rem;
+    float: right;
+  }
+
+  .main__content {
+    display: flex;
+    flex-direction: column;
+    clear: left;
+    text-align: left;
+    min-height: 100vh;
+    padding: 5rem 0;
+  }
+
+  h1 {
+    /* font-size: 2.8rem; */
+  }
+
+  .main__content p {
+    font-size: 0.8rem;
+  }
 }
