@@ -104,29 +104,24 @@ textarea:not([rows]) {
 
 body {
   background: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
-
   margin: 0;
   font-family: "Josefin Sans", sans-serif;
-  display: grid;
-  place-items: center;
 }
 
 .logo {
-  width: 10rem;
-  padding: 1.5rem 0;
-  padding-left: 2rem;
+  /* width: 10rem; */
+  margin: 1.5rem 0;
+  margin-left: 2rem;
 }
 
 .main__content {
-  display: grid;
-  place-items: center;
   text-align: center;
 }
 
 h1 {
   text-transform: uppercase;
   font-weight: 600;
-  max-width: 15ch;
+  /* max-width: 15ch; */
   letter-spacing: 1rem;
 }
 
@@ -139,23 +134,36 @@ h1 span {
   min-width: 100%;
 }
 
+.container {
+  max-width: 25rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.1fr 1fr;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .main__content {
   padding: 1rem;
 }
 
-.main__content p {
+.main__content__info {
   color: var(--Pink);
   font-size: var(--body-copy);
-  max-width: 38ch;
+  /* max-width: 38ch; */
   line-height: 1.3rem;
   padding: 1rem 0;
 }
 
 .email-submit {
   min-height: 2.5rem;
-  padding: 0.59rem 2rem;
+  padding: 0 2rem;
   position: relative;
-  top: 0.4rem;
+  top: 1rem;
   right: 1.3rem;
   border-radius: 2rem;
   background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
@@ -164,10 +172,8 @@ h1 span {
 }
 
 .email-box {
-  /* padding: 0.7rem 2rem; */
-  padding-left: 1rem;
   min-height: 2.5rem;
-  /* max-width: 100%; */
+  padding: 0 1rem;
   font-size: 0.8rem;
   border: 1px solid pink;
   border-radius: 2rem;
@@ -183,38 +189,67 @@ h1 span {
 form {
   padding-top: 1rem;
   padding-bottom: 3rem;
-  /* display: grid;
-  grid-template-columns: 1fr 1fr;
-  place-items: center;
-*/
+}
+
+.error-msg {
+  color: var(--Red);
+  padding-top: 0.1rem;
+  margin-left: 3.5rem;
+  position: absolute;
+  /* left: 5.5rem; */
+  font-size: 0.8rem;
 }
 
 @media (min-width: 65rem) {
-  nav {
-    float: left;
+  body {
+    background: url(./images/bg-pattern-desktop.svg);
+    background-repeat: no-repeat;
   }
+
   .container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 0.5fr 1fr 1fr;
+    max-height: 100vh;
+    min-width: 100vw;
   }
 
   .hero-image {
-    padding-left: 5rem;
-    float: right;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: -4;
+    grid-row-end: -1;
+    overflow: hidden;
   }
 
   .main__content {
-    display: flex;
-    flex-direction: column;
-    clear: left;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 4;
     text-align: left;
-    min-height: 100vh;
-    padding: 5rem 0;
+    padding-left: 6rem;
   }
 
   h1 {
-    /* font-size: 2.8rem; */
+    max-width: 20ch;
+    font-size: 2.5rem;
   }
 
-  .main__content p {
-    font-size: 0.8rem;
+  .main__content__info {
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+    max-width: 48ch;
+  }
+  .email-box {
+    padding: 0 3rem;
+  }
+
+  .logo {
+    margin-top: 2rem;
+    margin-left: 6.5rem;
+  }
+
+  .error-msg {
+    margin-left: 1.5rem;
   }
 }

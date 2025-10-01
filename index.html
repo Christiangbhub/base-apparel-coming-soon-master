@@ -19,11 +19,10 @@
   <body>
     <main>
       <div class="container">
-        <nav>
-          <div class="logo">
-            <img src="./images/logo.svg" alt="" />
-          </div>
-        </nav>
+        <div class="logo">
+          <img src="./images/logo.svg" alt="" />
+        </div>
+
         <div class="hero-image">
           <picture>
             <source
@@ -37,15 +36,26 @@
             />
           </picture>
         </div>
+
         <div class="main__content">
           <h1><span>We're</span> coming soon</h1>
-          <p>
+          <p class="main__content__info">
             Hello fellow shoppers! We're currently building our new fashion
             store. Add your email below to stay up-to-date with announcements
             and our launch deals.
           </p>
-          <form action="#">
-            <input class="email-box" type="email" placeholder="Email Address" />
+
+          <form action="#" id="form">
+            <label for="email"></label>
+            <input
+              id="email"
+              name="email"
+              class="email-box"
+              aria-label="Email"
+              type="email"
+              placeholder="Email Address"
+            />
+            <p class="error-msg"></p>
             <button class="email-submit" type="submit">
               <img src="./images/icon-arrow.svg" alt="" />
             </button>
@@ -53,6 +63,8 @@
         </div>
       </div>
     </main>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
     <script src="./main.js"></script>
   </body>
