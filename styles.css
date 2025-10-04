@@ -135,6 +135,7 @@ h1 span {
 }
 
 .container {
+  min-height: 100vh;
   max-width: 25rem;
   display: grid;
   grid-template-columns: 1fr;
@@ -201,6 +202,11 @@ form {
 }
 
 @media (min-width: 65rem) {
+  picture,
+  .hero-image img {
+    height: 100%;
+  }
+
   body {
     background: url(./images/bg-pattern-desktop.svg);
     background-repeat: no-repeat;
@@ -210,23 +216,29 @@ form {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 0.5fr 1fr 1fr;
     max-height: 100vh;
-    min-width: 100vw;
+    min-width: 100%;
   }
 
   .hero-image {
     grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: -4;
-    grid-row-end: -1;
-    overflow: hidden;
+    /* grid-column-end: 3; */
+    grid-row-start: 1;
+    max-height: 100vh;
+    /* grid-row-end: 4; */
+  }
+
+  .hero-image img {
+    object-fit: cover;
+    object-position: top;
   }
 
   .main__content {
     grid-column-start: 1;
     grid-column-end: 2;
-    grid-row-start: 2;
-    grid-row-end: 4;
+    grid-row: span 1;
+    grid-row-end: 2;
     text-align: left;
+    padding-top: 10rem;
     padding-left: 6rem;
   }
 
@@ -245,6 +257,8 @@ form {
   }
 
   .logo {
+    grid-column-start: 1;
+    grid-row-start: 1;
     margin-top: 2rem;
     margin-left: 6.5rem;
   }
